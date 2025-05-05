@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <title>mosAIc: Next-Generation Performance Assessment Builder</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #ffffff;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    form {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e0e0e0;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #444;
+    }
+    input[type="text"], input[type="number"], textarea, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      background-color: #fafafa;
+      box-sizing: border-box;
+    }
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .checkbox-group label {
+      width: 30%;
+      margin-bottom: 10px;
+      font-weight: normal;
+      color: #555;
+    }
+    button {
+      margin-top: 30px;
+      width: 100%;
+      padding: 16px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #output {
+      margin-top: 40px;
+      padding: 20px;
+      background: #f1f3f5;
+      border-radius: 8px;
+      font-size: 16px;
+      color: #333;
+    }
+    /* ======= Logo Section Polishing ======= */
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .logo-container {
+      flex: 0 0 auto;
+      margin-right: 20px;
+    }
+    .logo-container img {
+      width: 450px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+    }
+    .text-container {
+      flex: 1;
+      max-width: 600px;
+    }
+    @media (max-width: 768px) {
+      .logo-container img {
+        width: 300px;
+      }
+      .header-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .logo-container {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+    @media (max-width: 480px) {
+      .logo-container img {
+        width: 250px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="header-container">
+  <div class="logo-container">
+    <img src="https://i.postimg.cc/XqMPFv8B/Copy-of-Copy-of-Copy-of-Distinctive-Experiences-31.png" alt="mosAIc Logo">
+  </div>
+  <div class="text-container">
+    <h1 style="margin-bottom: 20px;">mosAIc: Next-Generation Performance Assessment Builder</h1>
+    <p style="font-size: 16px; color: #555; line-height: 1.6;">
+      <strong>mosAIc</strong> is a powerful, AI-assisted platform designed for Kentucky teachers, helping them quickly, easily, and effectively create performance-based assessments that align with vibrant learning expectations.
+    </p>
+    <p style="font-size: 16px; color: #555; line-height: 1.6;">
+      Inspired by the idea of a mosaic—where many individual pieces come together to create a complete and meaningful whole—<strong>mosAIc</strong> brings together performance artifacts and assessment elements to build a full picture of a student's learning profile, focused on real-world readiness and skill mastery.
+    </p>
+    <p style="font-size: 16px; color: #555; line-height: 1.6;">
+      At its core, <strong>mosAIc</strong> is a streamlined, teacher-centered chatbot tool. Teachers simply enter specific information into guided fields, and AI generates a customized, performance-based assessment. Importantly, <strong>mosAIc</strong> ensures that teacher expertise and judgment remain central — educators are encouraged to review, refine, and personalize the AI’s suggestions to ensure they are appropriate and aligned to student needs.
+    </p>
+    <p style="font-size: 16px; color: #555; line-height: 1.6; margin-bottom: 0;">
+      <strong>The goal of mosAIc is simple:</strong><br>
+      Make designing vibrant, real-world, performance-based assessments easier, faster, more effective, and more innovative — while keeping teachers in control.
+    </p>
+  </div>
+</div>
+
+<form id="assessmentForm">
+
+  <label for="gradeLevel">Grade Level:</label>
+  <select id="gradeLevel" name="gradeLevel" required>
+    <option value="">Select Grade</option>
+    <option>Kindergarten</option>
+    <option>1st Grade</option>
+    <option>2nd Grade</option>
+    <option>3rd Grade</option>
+    <option>4th Grade</option>
+    <option>5th Grade</option>
+    <option>6th Grade</option>
+    <option>7th Grade</option>
+    <option>8th Grade</option>
+    <option>9th Grade</option>
+    <option>10th Grade</option>
+    <option>11th Grade</option>
+    <option>12th Grade</option>
+  </select>
+
+  <label for="subjectArea">Subject Area:</label>
+  <select id="subjectArea" name="subjectArea" required>
+    <option value="">Select Subject</option>
+    <option>Math</option>
+    <option>Science</option>
+    <option>English/Language Arts</option>
+    <option>Social Studies</option>
+    <option>Physical Education</option>
+    <option>Visual/Performing Arts</option>
+    <option>Career and Technical Education</option>
+    <option>World Languages</option>
+    <option>Other</option>
+  </select>
+
+  <label for="specificCourse">Specific Course/Content:</label>
+  <input type="text" id="specificCourse" name="specificCourse" placeholder="Example: Algebra I, Biology, U.S. History" required>
+
+  <label for="standardNumber">Priority Standard Number:</label>
+  <input type="text" id="standardNumber" name="standardNumber" placeholder="Enter standard number (e.g., KY.4.OA.2)" required>
+
+  <label for="standardDescription">Priority Standard Description:</label>
+  <textarea id="standardDescription" name="standardDescription" placeholder="Copy and paste the Priority Standard description here..." required></textarea>
+
+  <h2>Performance Assessment Description</h2>
+
+  <label for="assessmentTitle">Performance Assessment Title:</label>
+  <input type="text" id="assessmentTitle" name="assessmentTitle" required>
+
+  <label for="realWorldTopic">Real-World Topic/Theme:</label>
+  <textarea id="realWorldTopic" name="realWorldTopic" placeholder="Describe the real-world theme or context students will engage with." required></textarea>
+
+  <div style="margin-top: 20px;">
+    <input type="checkbox" id="letGPTChoose" name="letGPTChoose" value="Yes">
+    <label for="letGPTChoose" style="display: inline;">Allow ChatGPT to select 5 closely aligned careers based on the real-world scenario.</label>
+  </div>
+
+  <label for="careerFields">Select Career Fields to Connect to the Real-World Scenario:</label>
+  <p style="font-size: 14px; color: #555;">Please select up to <strong>five (5)</strong> career fields OR check the box above to let ChatGPT decide.</p>
+
+  <div class="checkbox-group">
+    <label><input type="checkbox" name="careerFields" value="Scientist"> Scientist</label>
+    <label><input type="checkbox" name="careerFields" value="Engineer"> Engineer</label>
+    <label><input type="checkbox" name="careerFields" value="Healthcare Professional"> Healthcare Professional</label>
+    <label><input type="checkbox" name="careerFields" value="Educator/Teacher"> Educator/Teacher</label>
+    <label><input type="checkbox" name="careerFields" value="Entrepreneur/Business Owner"> Entrepreneur/Business Owner</label>
+    <label><input type="checkbox" name="careerFields" value="Architect"> Architect</label>
+    <label><input type="checkbox" name="careerFields" value="Environmental Specialist"> Environmental Specialist</label>
+    <label><input type="checkbox" name="careerFields" value="Marketing/Advertising Professional"> Marketing/Advertising Professional</label>
+    <label><input type="checkbox" name="careerFields" value="Journalist/Communicator"> Journalist/Communicator</label>
+    <label><input type="checkbox" name="careerFields" value="Software Developer/Technologist"> Software Developer/Technologist</label>
+    <label><input type="checkbox" name="careerFields" value="Artist/Designer"> Artist/Designer</label>
+    <label><input type="checkbox" name="careerFields" value="Lawyer/Legal Professional"> Lawyer/Legal Professional</label>
+  </div>
+
+<!-- (Part 2 Form Fields Continue... Career Fields, Durable Skills, Interdisciplinary, Output, Script) -->
+
+  <label for="performanceType">Select Performance Assessment Types:</label>
+  <div class="checkbox-group">
+    <label><input type="checkbox" name="performanceType" value="Real-World Modeling"> Real-World Modeling - Create a model that represents a real-world system or phenomenon.</label>
+    <label><input type="checkbox" name="performanceType" value="Real-World Solution"> Real-World Solution - Design a practical solution to an authentic problem.</label>
+    <label><input type="checkbox" name="performanceType" value="Real-World Communication"> Real-World Communication - Communicate understanding through a real-world format (podcast, presentation, etc.).</label>
+    <label><input type="checkbox" name="performanceType" value="Real-World Discovery"> Real-World Discovery - Investigate and uncover new insights around a topic.</label>
+    <label><input type="checkbox" name="performanceType" value="Real-World Collaboration"> Real-World Collaboration - Collaborate with others to create a real-world product or solution.</label>
+    <label><input type="checkbox" name="performanceType" value="Real-World Creation"> Real-World Creation - Student-driven project based on passions/interests aligned to standards.</label>
+    <label><input type="checkbox" name="performanceType" value="Real-World Synthesis"> Real-World Synthesis - Interdisciplinary exploration of a real-world theme or issue.</label>
+  </div>
+
+  <label for="realWorldConnection">Real-World Connection Option:</label>
+  <select id="realWorldConnection" name="realWorldConnection" required>
+    <option value="">Select an Option</option>
+    <option>Assessment includes at least 4 real-world careers.</option>
+    <option>Assessment allows for personalization to student's interests, passions, and aspirations.</option>
+  </select>
+
+  <label for="interdisciplinaryConnections">Interdisciplinary Connections:</label>
+  <textarea id="interdisciplinaryConnections" name="interdisciplinaryConnections" placeholder="What other subject areas will connect to this performance assessment?" required></textarea>
+
+  <label for="durableSkills">Durable Skills Focus:</label>
+  <select id="durableSkills" name="durableSkills" required>
+    <option value="">Select Durable Skill</option>
+    <option>Problem Solving</option>
+    <option>Communication (written, verbal, or digital)</option>
+    <option>Creativity and Innovation</option>
+    <option>Teamwork</option>
+  </select>
+
+  <h2>Reflection Section</h2>
+
+  <label for="reflectionPrompts">Reflection Prompts:</label>
+  <textarea id="reflectionPrompts" name="reflectionPrompts" placeholder="What questions will students answer to reflect on their learning, challenges, growth, and connections?" required></textarea>
+
+  <button type="submit">Generate Performance Assessment</button>
+
+</form>
+
+<div id="output"></div>
+
+<script>
+  document.getElementById('assessmentForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = {};
+    formData.forEach((value, key) => {
+      if (data[key]) {
+        data[key] += ", " + value;
+      } else {
+        data[key] = value;
+      }
+    });
+
+    fetch(window.location.href, {
+      method: 'POST',
+      body: new URLSearchParams(data)
+    })
+    .then(response => response.text())
+    .then(text => {
+      document.getElementById('output').innerHTML = "<h2>Generated Performance Assessment:</h2><p>" + text + "</p>";
+      window.scrollTo({ top: document.getElementById('output').offsetTop, behavior: 'smooth' });
+    })
+    .catch(error => {
+      document.getElementById('output').innerHTML = "<p style='color:red;'>Error generating performance assessment. Please try again.</p>";
+    });
+  });
+</script>
+
+</body>
+</html>
