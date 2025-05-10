@@ -6,7 +6,7 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #f8f9fa;
+      background-color: #f4f1ed; /* Matching banner background */
       padding: 20px;
       color: #333;
     }
@@ -79,7 +79,7 @@
 </head>
 <body>
 
-<!-- Banner -->
+<!-- Banner Image -->
 <div style="text-align: center; margin-bottom: 30px;">
   <img 
     src="https://i.postimg.cc/ydLy6Vq4/Copy-of-Copy-of-Copy-of-Distinctive-Experiences-31.png" 
@@ -87,10 +87,10 @@
     style="width: 60%; max-width: 500px; height: auto; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
 </div>
 
-<!-- Two Column Layout -->
+<!-- Two-Column Layout: Form + Embedded Site -->
 <div class="container">
-  
-  <!-- Left Column: Form -->
+
+  <!-- Left: Input Form -->
   <form id="assessmentForm" class="form-container">
     <label>Priority Standard (e.g., 7.E.ST.1):</label>
     <input type="text" name="learningStandards" required placeholder="Enter standard code">
@@ -101,18 +101,18 @@
     <button type="submit">Identify Priority Skills</button>
   </form>
 
-  <!-- Right Column: Embedded Website -->
+  <!-- Right: Embedded Satchel Commons -->
   <div class="iframe-container">
     <iframe src="https://ky.satchelcommons.com" title="Satchel Commons"></iframe>
   </div>
 </div>
 
-<!-- Spinner -->
+<!-- Loading Spinner -->
 <div id="spinner">
   <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="Loading..." width="100">
 </div>
 
-<!-- AI Response -->
+<!-- Response Area -->
 <div id="response"></div>
 <button id="downloadPDF" style="display:none;">Save as PDF</button>
 
@@ -165,3 +165,4 @@ document.getElementById('downloadPDF').addEventListener('click', () => {
 
 </body>
 </html>
+
